@@ -1,5 +1,3 @@
-import { env } from "cloudflare:workers";
-import { httpServerHandler } from "cloudflare:node";
 import express, { Request, Response } from "express";
 import cors from "cors";
 import { zipSync } from "fflate";
@@ -123,4 +121,3 @@ app.post("/download", async (req: Request, res: Response) => {
 });
 
 app.listen(3000);
-export default httpServerHandler(3000);
