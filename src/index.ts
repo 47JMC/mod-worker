@@ -95,7 +95,7 @@ async function resolveMod(
 	await Promise.allSettled(requiredDeps.map((dep) => resolveMod(dep.project_id, version, loader, files, resolved)));
 }
 
-app.post("/download", async (req: express.Request, res: express.Response) => {
+app.post("/download", async (req: Request, res: Response) => {
 	const { mods, version, loader } = req.body as DownloadRequest;
 
 	if (!mods?.length || !version || !loader) {
